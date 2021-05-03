@@ -20,8 +20,8 @@ def main():
     correct_answers = 0
     while correct_answers < 3:
         number = randint(0, 100)
-        Answer = prompt.string('Question: {} '.format(number))
-        print('Your answer: {}'.format(Answer))
+        Answer = prompt.string('Question: {0}{1}Your answer: '.format(number, '\n'))
+        #print('Your answer: {}'.format(Answer))
         if ((number % 2 == 0 and Answer == 'yes') or (number % 2 != 0 and Answer == 'no')):
             print('Correct!')
             correct_answers += 1
