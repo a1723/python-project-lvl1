@@ -5,7 +5,8 @@ from brain_games.cli import entering_user_name
 
 def main():
     print('Welcome to the Brain Games!')
-    entering_user_name()
+    name = entering_user_name()
+    return name
 
 
 if __name__ == '__main__':
