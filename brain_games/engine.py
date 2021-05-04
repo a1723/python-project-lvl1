@@ -7,6 +7,13 @@ name = welcome_user()
 def generate_number():
     return random.randint(1, 10)
 
+def generate_progression():
+    step = random.randint(1, 5)
+    progression = []
+    for i in range(1, 100, step):
+        progression.append(i)
+    return progression
+
 
 #Аргументы необязательны для универсальности и использованияя функции во всех играх
 def get_user_answer(num1, num2 = '', operation_type = ''):

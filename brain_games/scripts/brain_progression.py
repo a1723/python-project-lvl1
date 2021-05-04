@@ -1,26 +1,15 @@
 #!/usr/bin/env python
 from random import randint
-from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer
-
-def generate_progression():
-    step = randint(1, 5)
-    progression = []
-    for i in range(1, 100, step):
-        progression.append(i)
-    return progression
+from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer, generate_progression
 
 def get_mutable_element_index(progression):
     rand_progression_index = randint(0, len(progression))
-    #mutable_value = progression[rand_progression_index]
-    #progression.pop(rand_progression_index)
     return rand_progression_index
 
 def get_mutable_element_value(progression, rand_progression_index):
     return str(progression[rand_progression_index])
 
 def get_changed_progression(progression, rand_progression_index):
-    #print(progression)
-    #print(rand_progression_index)
     progression[rand_progression_index] = '..'
     changed_progression = progression
     return changed_progression
