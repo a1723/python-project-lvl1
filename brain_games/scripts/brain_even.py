@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from brain_games.engine import prompt, name, generate_number, get_user_answer, get_wrong_answer, get_congratulations
+from brain_games.engine import prompt, name, generate_number, get_user_answer, get_wrong_answer, get_congratulations, check_answer
 
 
 def get_correct_answer(num1):   #проверяем число на чётность
@@ -10,18 +10,12 @@ def get_correct_answer(num1):   #проверяем число на чётнос
 def main():
     print('Answer "yes" if the number is even, otherwise answer "no".')
 
-    correct_answers = 0
-    while correct_answers < 3:
+    count_correct_answers = 0
+    while count_correct_answers < 3:
         num1 = generate_number()
         answer = get_user_answer(num1)
         correct_answer = get_correct_answer(num1)
-        if (answer == correct_answer):
-            print('Correct!')
-            correct_answers += 1
-        else:
-            get_wrong_answer(correct_answer, answer)
-            return
-
+        count_correct_answers = check_answer(answer, correct_answer, count_correct_answers)
     get_congratulations()
 
 
