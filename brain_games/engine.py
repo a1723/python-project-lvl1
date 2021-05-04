@@ -26,6 +26,7 @@ def get_wrong_answer(correct_answer, answer):
     print(f'{answer} is wrong answer ;(. Correct answer was {correct_answer}\nLet\'s try again, {name}!')
     exit()
 
+
 def get_congratulations():
     print(f'Congratulations, {name}!')
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from brain_games.engine import generate_number, get_user_answer, get_congratulations, get_wrong_answer, check_answer
+from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer
 
 def get_correct_answer(num1, num2):   #проверяем число на чётность
     while num1 != 0 and num2 != 0:
