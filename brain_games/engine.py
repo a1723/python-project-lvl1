@@ -5,7 +5,8 @@ name = welcome_user()
 
 
 def generate_number():
-    return random.randint(1, 10)
+    return random.randint(2, 30)
+
 
 def generate_progression():
     step = random.randint(1, 5)
