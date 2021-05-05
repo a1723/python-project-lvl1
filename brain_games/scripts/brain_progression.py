@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 from random import randint
 from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer, generate_progression
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import operator, random
 from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer
 
