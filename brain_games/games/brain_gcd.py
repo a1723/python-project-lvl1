@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer
+import prompt
+from brain_games.engine import generate_number, get_congratulations, check_answer
 
 def get_correct_answer(num1, num2):   #проверяем число на чётность
     while num1 != 0 and num2 != 0:
@@ -9,6 +10,9 @@ def get_correct_answer(num1, num2):   #проверяем число на чёт
         else:
             num2 = num2 % num1
     return (str(num1 + num2))
+
+def get_user_answer(num1, num2):
+    return prompt.string(f'Question: {num1} {num2}\nYour answer: ')
 
 
 def main():
