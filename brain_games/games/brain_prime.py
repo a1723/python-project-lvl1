@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 
-import collections
-from random import randint
-from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer, generate_progression
+import collections as coll
+from brain_games.engine import (
+    generate_number,
+    get_user_answer,
+    get_congratulations,
+    check_answer
+)
 
 
 def get_number_divisors(num):
@@ -17,7 +21,7 @@ def get_number_divisors(num):
 
 def get_correct_answer(result_values, num):
     correct_values = [1, num]
-    if (collections.Counter(result_values) == collections.Counter(correct_values)):
+    if (coll.Counter(result_values) == coll.Counter(correct_values)):
         return "yes"
     return "no"
 
@@ -25,11 +29,11 @@ def get_correct_answer(result_values, num):
 def main():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    count_correct_answers = 0
-    while count_correct_answers < 3:
+    correct_answers = 0
+    while correct_answers < 3:
         num = generate_number()
         result_values = get_number_divisors(num)
         correct_answer = get_correct_answer(result_values, num)
         answer = get_user_answer(num)
-        count_correct_answers = check_answer(answer, correct_answer, count_correct_answers)
+        correct_answers = check_answer(answer, correct_answer, correct_answers)
     get_congratulations()
