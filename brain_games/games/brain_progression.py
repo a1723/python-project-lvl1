@@ -14,7 +14,7 @@ def get_mutable_element_value(progression, mutable_element_index):
 def get_changed_progression(progression, mutable_element_value):
     changed_progression = " ".join(map(str, progression))
     print(changed_progression)
-    changed_progression = changed_progression.replace(str(mutable_element_value), '..')
+    changed_progression = changed_progression.replace(str(mutable_element_value), '..', 1)
     return changed_progression
 
 
