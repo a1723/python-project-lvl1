@@ -3,6 +3,7 @@
 from random import randint
 from brain_games.engine import generate_number, get_user_answer, get_congratulations, check_answer, generate_progression
 
+
 def get_mutable_element_index(progression):
     mutable_element_index = randint(0, len(progression))
     return mutable_element_index

@@ -2,6 +2,7 @@
 
 from brain_games.games.brain_progression import main as brain_progression
 
+
 def main():
     """Run even game."""
     brain_progression()

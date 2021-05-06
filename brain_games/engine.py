@@ -1,4 +1,5 @@
-import prompt, random
+import prompt
+import random
 from brain_games.scripts.brain_games import main as welcome_user
 
 name = welcome_user()
@@ -16,8 +17,10 @@ def generate_progression():
     return progression
 
 
-#Аргументы необязательны для универсальности и использованияя функции во всех играх кроме brain_gcd (из-за ненадобности пробела)
-def get_user_answer(num1, num2 = '', operation_type = ''):
+# Аргументы необязательны для универсальности и использованияя
+# функции во всех играх кроме brain_gcd (из-за ненадобности пробела)
+
+def get_user_answer(num1, num2='', operation_type=''):
     return prompt.string(f'Question: {num1} {operation_type} {num2}\nYour answer: ')
 
 
