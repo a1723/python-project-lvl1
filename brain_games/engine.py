@@ -1,8 +1,8 @@
 import prompt
 import random
-from brain_games.scripts.brain_games import main as welcome_user
+from brain_games.cli import main as entering_user_name
 
-name = welcome_user()
+user_name = entering_user_name()
 wrong_answer = ' is wrong answer ;(. Correct answer was '
 
 
@@ -35,9 +35,9 @@ def check_answer(answer, correct_answer, count_correct_answers):
 
 
 def get_wrong_answer(correct_answer, answer):
-    print(f'{answer}{wrong_answer}{correct_answer}\nLet\'s try again, {name}!')
+    print(f'{answer}{wrong_answer}{correct_answer}\nLet\'s try again, {user_name}!')
     exit()
 
 
 def get_congratulations():
-    print(f'Congratulations, {name}!')
+    print(f'Congratulations, {user_name}!')
