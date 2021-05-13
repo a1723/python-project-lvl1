@@ -12,4 +12,3 @@ def entering_game_name():
     game = prompt.string('Type the name of the game from the list: even, calc, gcd, prime, progression\n')
     print(f'You choose the {game} game!')
     return game
-

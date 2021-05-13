@@ -5,6 +5,7 @@ from brain_games.games.brain_gcd import main as brain_gcd
 from brain_games.games.brain_prime import main as brain_prime
 from brain_games.games.brain_progression import main as brain_progression
 
+
 def main():
     game = entering_game_name()
     if not game in('even', 'calc', 'gcd', 'prime', 'progression'):
@@ -20,4 +21,5 @@ def main():
         brain_prime()
     elif game == 'progression':
         brain_progression()
+    return game
 

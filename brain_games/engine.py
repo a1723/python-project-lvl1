@@ -41,3 +41,4 @@ def get_wrong_answer(correct_answer, answer):
 
 def get_congratulations():
     print(f'Congratulations, {user_name}!')
+
