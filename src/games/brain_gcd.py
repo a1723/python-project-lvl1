@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
 import prompt
-from brain_games.engine import (
+from src.helpers import (
     generate_number,
     get_congratulations,
     check_answer
 )
+from src.helpers import MAX_ROUNDS
 
 
 def get_correct_answer(num1, num2):   # проверяем число на чётность
@@ -21,14 +22,14 @@ def get_user_answer(num1, num2):
     return prompt.string(f'Question: {num1} {num2}\nYour answer: ')
 
 
-def main():
+def brain_gcd(player_name):
     print('Find the greatest common divisor of given numbers.')
 
     correct_answers = 0
-    while correct_answers < 3:
+    while correct_answers < MAX_ROUNDS:
         num1 = generate_number()
         num2 = generate_number()
         answer = get_user_answer(num1, num2)
         correct_answer = get_correct_answer(num1, num2)
-        correct_answers = check_answer(answer, correct_answer, correct_answers)
-    get_congratulations()
+        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
+    get_congratulations(player_name)

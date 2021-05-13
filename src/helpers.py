@@ -1,10 +1,9 @@
 import prompt
 import random
-from brain_games.cli import main as entering_user_name
 
-user_name = entering_user_name()
-wrong_answer = ' is wrong answer ;(. Correct answer was '
 
+WRONG_ANSWER = ' is wrong answer ;(. Correct answer was '
+MAX_ROUNDS = 3
 
 def generate_number():
     return random.randint(2, 30)
@@ -25,20 +24,20 @@ def get_user_answer(num1, num2='', operation=''):
     return prompt.string(f'Question: {num1} {operation} {num2}\nYour answer: ')
 
 
-def check_answer(answer, correct_answer, count_correct_answers):
+def check_answer(answer, correct_answer, count_correct_answers, player_name):
     if (answer == correct_answer):
         print('Correct!')
         count_correct_answers += 1
         return count_correct_answers
     else:
-        get_wrong_answer(correct_answer, answer)
+        get_wrong_answer(correct_answer, answer, player_name)
 
 
-def get_wrong_answer(correct_answer, answer):
-    print(f'{answer}{wrong_answer}{correct_answer}\nLet\'s try again, {user_name}!')
+def get_wrong_answer(correct_answer, answer, player_name):
+    print(f'{answer}{WRONG_ANSWER}{correct_answer}\nLet\'s try again, {player_name}!')
     exit()
 
 
-def get_congratulations():
-    print(f'Congratulations, {user_name}!')
+def get_congratulations(player_name):
+    print(f'Congratulations, {player_name}!')
 

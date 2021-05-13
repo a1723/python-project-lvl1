@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 import collections as coll
-from brain_games.engine import (
+from src.helpers import (
     generate_number,
     get_user_answer,
     get_congratulations,
     check_answer
 )
+from src.helpers import MAX_ROUNDS
 
 
 def get_number_divisors(num):
@@ -26,14 +27,14 @@ def get_correct_answer(result_values, num):
     return "no"
 
 
-def main():
+def brain_prime(player_name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
     correct_answers = 0
-    while correct_answers < 3:
+    while correct_answers < MAX_ROUNDS:
         num = generate_number()
         result_values = get_number_divisors(num)
         correct_answer = get_correct_answer(result_values, num)
         answer = get_user_answer(num)
-        correct_answers = check_answer(answer, correct_answer, correct_answers)
-    get_congratulations()
+        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
+    get_congratulations(player_name)
