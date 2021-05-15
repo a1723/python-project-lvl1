@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import prompt
-from src.helpers import (
+from helpers import (
     generate_number,
     get_congratulations,
     check_answer
 )
-from src.helpers import MAX_ROUNDS
+from helpers import MAX_ROUNDS
 
 
 def get_correct_answer(num1, num2):   # проверяем число на чётность

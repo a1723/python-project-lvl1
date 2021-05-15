@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 from random import randint
-from src.helpers import (
+from helpers import (
     get_user_answer,
     get_congratulations,
     check_answer,
     generate_progression
 )
-from src.helpers import MAX_ROUNDS
+from helpers import MAX_ROUNDS
 
 def get_element_index(progression):
     element_index = randint(0, len(progression))

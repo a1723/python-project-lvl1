@@ -1,19 +1,9 @@
 import prompt
-from src.games.brain_even import brain_even
-from src.games.brain_calc import brain_calc
-from src.games.brain_gcd import brain_gcd
-from src.games.brain_prime import brain_prime
-from src.games.brain_progression import brain_progression
-
-
-"""GAMES = {
-    brain_even(): 'even',
-    brain_calc(): 'calc',
-    brain_gcd(): 'gcd',
-    brain_prime(): 'prime',
-    brain_progression(): 'progression'
-}
-"""
+from games.brain_even import brain_even
+from games.brain_calc import brain_calc
+from games.brain_gcd import brain_gcd
+from games.brain_prime import brain_prime
+from games.brain_progression import brain_progression
 
 
 def main():
@@ -47,5 +37,18 @@ def entering_game_name():
     return game
 
 
-if __name__ == "__main__":
-    main()
+"""GAMES = {
+    brain_even(player_name): 'even',
+    brain_calc(player_name): 'calc',
+    brain_gcd(player_name): 'gcd',
+    brain_prime(player_name): 'prime',
+    brain_progression(player_name): 'progression'
+}
+
+
+def main():
+    player_name = entering_player_name()
+    game = entering_game_name()
+    if not game in GAMES.values:
+        print('You typed incorrect game name!')
+    return GAMES[game](player_name)"""
