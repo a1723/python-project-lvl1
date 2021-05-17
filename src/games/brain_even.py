@@ -21,4 +21,6 @@ def brain_even(player_name):
         answer = get_user_answer(num1)
         correct_answer = get_correct_answer(num1)
         correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
-    get_congratulations(player_name)
+        print(correct_answers)
+    return correct_answers
+    get_congratulations(player_name, correct_answers)

@@ -28,16 +28,21 @@ def check_answer(answer, correct_answer, count_correct_answers, player_name):
     if (answer == correct_answer):
         print('Correct!')
         count_correct_answers += 1
+        #print(count_correct_answers)
         return count_correct_answers
     else:
-        get_wrong_answer(answer, correct_answer, count_correct_answers, player_name)
-
-
-def get_wrong_answer(answer, correct_answer, count_correct_answers, player_name):
-    print(f'{answer}{WRONG_ANSWER}{correct_answer}\nLet\'s try again, {player_name}!')
+        get_wrong_answer(answer, correct_answer, player_name, count_correct_answers)
+        return count_correct_answers
     exit()
 
 
 
-def get_congratulations(player_name):
+def get_wrong_answer(answer, correct_answer, player_name, count_correct_answers):
+    print(f'{answer}{WRONG_ANSWER}{correct_answer}\nLet\'s try again, {player_name}!')
+    #print(count_correct_answers)
+    #return count_correct_answers
+
+
+def get_congratulations(player_name, count_correct_answers):
     print(f'Congratulations, {player_name}!')
+    return count_correct_answers

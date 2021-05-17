@@ -4,7 +4,7 @@ from games.brain_calc import brain_calc
 from games.brain_gcd import brain_gcd
 from games.brain_prime import brain_prime
 from games.brain_progression import brain_progression
-
+from base import inserting_into_db
 
 def main():
     player_name = entering_player_name()
@@ -13,15 +13,17 @@ def main():
         print('You typed incorrect game name!')
         return
     elif game == 'even':
-        brain_even(player_name)
+        result = brain_even(player_name)
     elif game == 'calc':
-        brain_calc(player_name)
+        result = brain_calc(player_name)
     elif game == 'gcd':
-        brain_gcd(player_name)
+        result = brain_gcd(player_name)
     elif game == 'prime':
-        brain_prime(player_name)
+        result = brain_prime(player_name)
     elif game == 'progression':
-        brain_progression(player_name)
+        result = brain_progression(player_name)
+    print(player_name, game, result)
+    inserting_into_db(player_name, game, result)
 
 
 def entering_player_name():
