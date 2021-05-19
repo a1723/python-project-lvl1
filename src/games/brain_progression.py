@@ -9,6 +9,7 @@ from helpers import (
 )
 from helpers import MAX_ROUNDS
 
+
 def get_element_index(progression):
     element_index = randint(0, len(progression))
     return element_index

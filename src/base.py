@@ -19,10 +19,8 @@ def inserting_into_db(player_name, game_name, true_answers):
          true_answers INTEGER)
          """
       )
-
       cursor.execute(creating_table_query)
 
-      
       # Вставляем данные в таблицу
       data = (player_name, game_name, true_answers)
       sqlite_inserting = ("""INSERT INTO games (player_name, game_name, true_answers)
@@ -31,7 +29,6 @@ def inserting_into_db(player_name, game_name, true_answers):
       cursor.execute(sqlite_inserting, data)
       conn.commit()
       print("Запись успешно вставлена ​​в таблицу")
-      
       cursor.close()
 
     except sqlite3.Error as error:

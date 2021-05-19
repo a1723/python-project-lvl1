@@ -20,7 +20,6 @@ def generate_progression():
 
 # Аргументы необязательны для универсальности и использованияя
 # функции во всех играх кроме brain_gcd (из-за ненадобности пробела)
-
 def get_user_answer(num1, num2='', operation=''):
     return prompt.string(f'Question: {num1} {operation} {num2}\nYour answer: ')
 
