@@ -5,6 +5,7 @@ import random
 WRONG_ANSWER = ' is wrong answer ;(. Correct answer was '
 MAX_ROUNDS = 3
 
+
 def generate_number():
     return random.randint(2, 30)
 
@@ -24,25 +25,16 @@ def get_user_answer(num1, num2='', operation=''):
     return prompt.string(f'Question: {num1} {operation} {num2}\nYour answer: ')
 
 
-def check_answer(answer, correct_answer, count_correct_answers, player_name):
-    if (answer == correct_answer):
-        print('Correct!')
-        count_correct_answers += 1
-        #print(count_correct_answers)
-        return count_correct_answers
+def check_answer(answer, correct_answer, rounds, player_name):
+    while (answer != correct_answer):
+        print(f'{answer}{WRONG_ANSWER}{correct_answer}\nLet\'s try again, {player_name}!')
+        return rounds
     else:
-        get_wrong_answer(answer, correct_answer, player_name, count_correct_answers)
-        return count_correct_answers
-    exit()
+        print('Correct!')
+        rounds += 1
+        return rounds
 
 
-
-def get_wrong_answer(answer, correct_answer, player_name, count_correct_answers):
-    print(f'{answer}{WRONG_ANSWER}{correct_answer}\nLet\'s try again, {player_name}!')
-    #print(count_correct_answers)
-    #return count_correct_answers
-
-
-def get_congratulations(player_name, count_correct_answers):
+def get_congratulations(player_name, rounds):
     print(f'Congratulations, {player_name}!')
-    return count_correct_answers
+    return rounds

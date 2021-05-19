@@ -30,11 +30,16 @@ def get_correct_answer(result_values, num):
 def brain_prime(player_name):
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
 
-    correct_answers = 0
-    while correct_answers < MAX_ROUNDS:
+    rounds = 0
+    correct_rounds = 0
+    while rounds < MAX_ROUNDS:
         num = generate_number()
         result_values = get_number_divisors(num)
         correct_answer = get_correct_answer(result_values, num)
         answer = get_user_answer(num)
-        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
-    get_congratulations(player_name)
+        correct_rounds = check_answer(answer, correct_answer, rounds, player_name)
+        rounds += 1
+        if (correct_rounds != rounds):
+            return correct_rounds
+    return correct_rounds
+    get_congratulations(player_name, correct_rounds)

@@ -29,12 +29,17 @@ def get_correct_answer(operation_type, num1, num2):
 def brain_calc(player_name):
     print('What is the result of the expression?')
 
-    correct_answers = 0
-    while correct_answers < MAX_ROUNDS:
+    rounds = 0
+    correct_rounds = 0
+    while rounds < MAX_ROUNDS:
         num1 = generate_number()
         num2 = generate_number()
         operation_type = get_operation_type()
         correct_answer = get_correct_answer(operation_type, num1, num2)
         answer = get_user_answer(num1, num2, operation_type)
-        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
-    get_congratulations(player_name)
+        correct_rounds = check_answer(answer, correct_answer, rounds, player_name)
+        rounds += 1
+        if (correct_rounds != rounds):
+            return correct_rounds
+    return correct_rounds
+    get_congratulations(player_name, correct_rounds)

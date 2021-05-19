@@ -6,6 +6,7 @@ from games.brain_prime import brain_prime
 from games.brain_progression import brain_progression
 from base import inserting_into_db
 
+
 def main():
     player_name = entering_player_name()
     game = entering_game_name()
@@ -22,7 +23,6 @@ def main():
         result = brain_prime(player_name)
     elif game == 'progression':
         result = brain_progression(player_name)
-    print(player_name, game, result)
     inserting_into_db(player_name, game, result)
 
 
@@ -53,4 +53,5 @@ def main():
     game = entering_game_name()
     if not game in GAMES.values:
         print('You typed incorrect game name!')
-    return GAMES[game](player_name)"""
+    result = GAMES[game](player_name)
+    inserting_into_db(player_name, game, result)"""
