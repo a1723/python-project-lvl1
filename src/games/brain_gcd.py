@@ -38,4 +38,3 @@ def brain_gcd(player_name):
             return correct_rounds
     return correct_rounds
     get_congratulations(player_name, correct_rounds)
-
