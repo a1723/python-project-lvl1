@@ -25,11 +25,17 @@ def get_user_answer(num1, num2):
 def brain_gcd(player_name):
     print('Find the greatest common divisor of given numbers.')
 
-    correct_answers = 0
-    while correct_answers < MAX_ROUNDS:
+    rounds = 0
+    correct_rounds = 0
+    while rounds < MAX_ROUNDS:
         num1 = generate_number()
         num2 = generate_number()
         answer = get_user_answer(num1, num2)
         correct_answer = get_correct_answer(num1, num2)
-        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
-    get_congratulations(player_name)
+        correct_rounds = check_answer(answer, correct_answer, rounds, player_name)
+        rounds += 1
+        if (correct_rounds != rounds):
+            return correct_rounds
+    return correct_rounds
+    get_congratulations(player_name, correct_rounds)
+

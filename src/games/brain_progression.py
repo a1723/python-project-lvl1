@@ -9,6 +9,7 @@ from helpers import (
 )
 from helpers import MAX_ROUNDS
 
+
 def get_element_index(progression):
     element_index = randint(0, len(progression))
     return element_index
@@ -28,13 +29,18 @@ def get_changed_progression(progression, element_val):
 def brain_progression(player_name):
     print('What number is missing in the progression?')
 
-    correct_answers = 0
-    while correct_answers < MAX_ROUNDS:
+    rounds = 0
+    correct_rounds = 0
+    while rounds < MAX_ROUNDS:
         progression = generate_progression()
         element_index = get_element_index(progression)
         element_val = get_element_val(progression, element_index)
         changed_progression = get_changed_progression(progression, element_val)
         answer = get_user_answer(changed_progression)
         correct_answer = element_val
-        correct_answers = check_answer(answer, correct_answer, correct_answers, player_name)
-    get_congratulations(player_name)
+        correct_rounds = check_answer(answer, correct_answer, rounds, player_name)
+        rounds += 1
+        if (correct_rounds != rounds):
+            return correct_rounds
+    return correct_rounds
+    get_congratulations(player_name, correct_rounds)
