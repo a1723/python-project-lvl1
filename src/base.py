@@ -35,3 +35,4 @@ def inserting_into_db(player_name, game_name, true_answers):
         if conn:
             conn.close()
             print("The SQLite connection is closed")
+            
