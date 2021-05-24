@@ -7,8 +7,7 @@ def inserting_into_db(player_name, game_name, true_answers):
       conn = sqlite3.connect("sqlite_python.db")
 
       #object for work with base
-      cursor = conn.cursor()
-      print("База данных подключена к SQLite")         
+      cursor = conn.cursor()       
 
       #creating table
       creating_table_query = (
@@ -28,7 +27,6 @@ def inserting_into_db(player_name, game_name, true_answers):
       """)
       cursor.execute(sqlite_inserting, data)
       conn.commit()
-      print("Запись успешно вставлена ​​в таблицу")
       cursor.close()
 
     except sqlite3.Error as error:
